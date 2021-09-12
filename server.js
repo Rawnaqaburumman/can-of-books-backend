@@ -21,7 +21,7 @@ const { getBooks } = require('./controller/book.controller');
 
  app.get('/book', getBooks);
 
-app.get('/test', (request, response) => {
+app.get('/', (request, response) => {
 
   response.send('test request received')
 
