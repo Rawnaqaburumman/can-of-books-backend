@@ -16,7 +16,11 @@ mongoose.connect(`${MONGO_URL}/${DB_NAME}`);
 const { getBooks } = require('./controller/book.controller');
  const beastBook  = require('./helper/bookSeed.seed');
 
+
    //beastBook();
+
+  //  beastBook();
+
 
 
  app.get('/book', getBooks);
