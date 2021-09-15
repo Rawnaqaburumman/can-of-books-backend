@@ -11,7 +11,40 @@ const getBooks = (request, response) => {
 
 };
 
+const createBook = (request, response) => {
+  const {
+    title,
+    description,
+    status,
+    email,
+  } = request.body;
+
+  const newBook = new bookModel({
+    title:title,
+    description:description,
+    status: status,
+    email:email,
+  });
+
+  newBook.save();
+  response.send(newBook);
+
+};
+
+const deleteBook = (request, response) => {
+console.log(request.params);
+  const bookId = request.params.book_id;
+
+  bookModel.deleteOne({ _id: bookId }, (error, deletedData) => {
+    response.json(deletedData);
+  });
+
+
+
+};
+
+
 
 module.exports = {
-    getBooks 
+  getBooks, createBook, deleteBook
 }
