@@ -17,7 +17,15 @@ mongoose.connect(MONGO_URL);
 const { getBooks,createBook,deleteBook } = require("./controller/book.controller");
 const beastBook = require("./helper/bookSeed.seed");
 
+
 // beastBook();
+
+
+   //beastBook();
+
+  //  beastBook();
+
+
 
 app.get("/book", getBooks);
 app.post("/book",createBook);
