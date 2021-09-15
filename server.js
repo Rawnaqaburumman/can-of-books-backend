@@ -14,7 +14,8 @@ app.use(cors());
 app.use(express.json());
 mongoose.connect(MONGO_URL);
 
-const { getBooks,createBook,deleteBook } = require("./controller/book.controller");
+const { getBooks,createBook,deleteBook,updateBook } = require("./controller/book.controller");
+
 const beastBook = require("./helper/bookSeed.seed");
 
 
@@ -30,7 +31,7 @@ const beastBook = require("./helper/bookSeed.seed");
 app.get("/book", getBooks);
 app.post("/book",createBook);
 app.delete("/book/:book_id",deleteBook);
-
+app.put("/book/:book_id",updateBook);
 app.get("/", (request, response) => {
   response.send("test request received");
 });
