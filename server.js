@@ -29,7 +29,7 @@ const beastBook = require("./helper/bookSeed.seed");
 
 app.get("/book", getBooks);
 app.post("/book",createBook);
-app.delete("/book/:book/_id",deleteBook);
+app.delete("/book/:book_id",deleteBook);
 
 app.get("/", (request, response) => {
   response.send("test request received");
